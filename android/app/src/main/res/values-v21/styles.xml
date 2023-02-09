@@ -1,0 +1,27 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="colorPrimaryDark">@color/status_bar_color</item>
+
+    </style>
+
+    <style name= "AppTheme.NoActionBar" >
+        <item name="colorPrimaryDark">@color/status_bar_color</item>
+
+        <item name= "windowActionBar" > false</item>
+        <item name= "windowNoTitle" > true</item>
+        <!--状态栏是否透明，API 21才出现的属性-->
+        <item name= "android:windowDrawsSystemBarBackgrounds" > true</item>
+        <!--设置状态栏颜色，API 21才出现的属性-->
+        <item name= "android:statusBarColor" > @android:color/transparent </item>
+        <item name="android:windowIsTranslucent">true</item>
+
+    </style>
+    <bool name= "fitsSystemWindows" >true </bool>
+    <style name="SplashScreenTheme" parent="SplashScreen_SplashTheme">
+        <item name="colorPrimaryDark">@color/status_bar_color</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+</resources>

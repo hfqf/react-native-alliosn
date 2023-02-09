@@ -1,0 +1,45 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        manifestPlaceholders = [
+            JPUSH_APPKEY: "cff776f56d4b3edaa4a99bd0",
+            APP_CHANNEL: "developer-default"
+        ]
+    }
+    lintOptions {
+        abortOnError false
+        warning 'InvalidPackage'
+    }
+    sourceSets.main {
+        jniLibs.srcDirs = ['libs']
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':jpush-react-native')
+    compile project(':jcore-react-native')
+    compile 'com.facebook.react:react-native:+'
+}
